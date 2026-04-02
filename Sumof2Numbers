@@ -1,5 +1,34 @@
+//1
 function sumOfNum(n1, n2){
-    return n1+n2
+    return n1+n2;
 }
-
 console.log("sumOfNum :", sumOfNum(5, 2));
+
+//2 Number() converts value into type casting
+function sumOfNum1(n1,n2){
+    return Number(n1)+Number(n2);
+}
+console.log("sumOfNum1 :", sumOfNum(8, 9));
+
+//3 Recurrsive way
+function recurrsiveSum(n1, n2){
+    if(n2 === 0) return n1;
+    return recurrsiveSum(n1+1, n2-1);
+}
+console.log("recurrsiveSum :", recurrsiveSum(4,7));
+console.log("recurrsiveSum 0 in n1 :", recurrsiveSum(0,7));
+console.log("recurrsiveSum 0 in n2:", recurrsiveSum(0,4));
+
+//4 arrow method
+const sumArrowWay = (n1, n2) => n1+n2;
+console.log("sumArrowWay :", sumArrowWay(2,3));
+
+/*5 reducer method 
+    The Rest Operator (written as ...) is like an "etc."
+    for your functions. It allows a function to accept any number of arguments and bundles 
+    them into a single array.
+*/
+function reduceSum(...num){
+    return num.reduce((acc, currrent) => acc+currrent, 0);
+}
+console.log("reducerSum :", reduceSum(1,2,4,5,7));
