@@ -11,16 +11,15 @@ function sortArrayWithBubbleSort(arr){
     let a = [...arr];
 
     for (let i = 0; i < arr.length; i++){
-        for(let j = 0; j <arr.length; j++) {
+        console.log(" I ITERATION :", i);
+        for(let j = 0; j < arr.length-1 ; j++) {
+            console.log(" J ITERATION :", j);
             if (a[j] > a[j + 1]) {
-                // swap
-                let temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
+                [a[j], a[j + 1]] = [a[j + 1], a[j]];
             }
-        }
-        return a;
+        }    
     }
+    return a;
 }
 console.log("sortArrayWithBubbleSort :", sortArrayWithBubbleSort([5,2,3,52,1,0,6]));
 
